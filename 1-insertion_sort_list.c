@@ -7,8 +7,7 @@
   */
 void insertion_sort_list(listint_t **list)
 {	listint_t *head = malloc(sizeof(listint_t));
-	listint_t *node = malloc(sizeof(listint_t));
-	listint_t *next = malloc(sizeof(listint_t));
+listint_t *node = malloc(sizeof(listint_t)), *next = malloc(sizeof(listint_t));
 	listint_t *prev = malloc(sizeof(listint_t));
 	listint_t *actual = malloc(sizeof(listint_t));
 
