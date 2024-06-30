@@ -1,11 +1,11 @@
 # include "sort.h"
 #include <stdio.h>
 /**
-*selection_sort-selectio
-*@array: int * 
-*@size: size_t
-*Return: void
-*/
+ *selection_sort-selectio
+ *@array: int *
+ *@size: size_t
+ *Return: void
+ */
 void selection_sort(int *array, size_t size)
 {
 	size_t i = 0, j = 1, k = 0;
@@ -25,7 +25,6 @@ void selection_sort(int *array, size_t size)
 		}
 		if (k != 0)
 		{
-			
 			array[k] = array[i];
 			array[i] = temp;
 			print_array(array, size);
