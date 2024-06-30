@@ -6,18 +6,21 @@
   *Return: void
   */
 void insertion_sort_list(listint_t **list)
-{
-	listint_t *head = malloc(sizeof(listint_t));
+{	listint_t *head = malloc(sizeof(listint_t));
 	listint_t *node = malloc(sizeof(listint_t));
 	listint_t *next = malloc(sizeof(listint_t));
 	listint_t *prev = malloc(sizeof(listint_t));
-	listint_t *comp = malloc(sizeof(listint_t));
-	comp = (*list)->next;
-	while (comp->next)
-	{
-		while (head)
+	listint_t *actual = malloc(sizeof(listint_t));
+
+	node = (*list)->next;
+	head = *list;
+	prev = head->prev;
+	next = node->next;
+	while (node)
+	{	actual = next;
+		while (head && node)
 		{
-			if( node->n < head->n)
+			if (node->n < head->n)
 			{
 				if (prev != NULL)
 					prev->next = node;
@@ -25,7 +28,7 @@ void insertion_sort_list(listint_t **list)
 				node->next = head;
 				head->prev = node;
 				head->next = next;
-				if ( next != NULL)
+				if (next != NULL)
 					next->prev = head;
 				if (prev == NULL)
 					*list = node;
@@ -33,16 +36,14 @@ void insertion_sort_list(listint_t **list)
 				head = prev;
 				if (prev)
 					prev = head->prev;
-				next = node->next;
-			}
+				if (node)
+					next = node->next; }
 			else
-				break;
-
-		}
-		comp = comp->next;
-		node = comp;
-		head = node->prev;
-		prev = head->prev;
-		next = node->next;
-	}
-}
+				break; }
+		node = actual;
+		if (node)
+			head = node->prev;
+		if (head)
+			prev = head->prev;
+		if (node != NULL)
+			next = node->next; } }
