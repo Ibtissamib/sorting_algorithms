@@ -12,7 +12,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *prev = malloc(sizeof(listint_t));
 	listint_t *actual = malloc(sizeof(listint_t));
 
-	if (list || (*list)->next)
+	if (list && (*list)->next)
 	{	node = (*list)->next;
 	head = *list;
 	prev = head->prev;
